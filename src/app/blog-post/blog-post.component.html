@@ -2,12 +2,21 @@
             'blogpost':true,
             'list-group-item-success':loveIts>0,
             'list-group-item-danger':loveIts<0}">
-  <h2>{{title}}</h2>
-  <h5 style='white-space : pre;' >{{content}}</h5>
-  <h6 style='position:absolute;right:7px;top:7px;'>{{created_at | date}}</h6>
-  <div>
-    <button class='btn btn-danger' (click)='love(-1)'>Love It !</button>
-    {{loveIts}}
-    <button class='btn btn-success' (click)='love(+1)'>Don't love It !</button>
+  <div class="row">
+    <h2 class='col-8'>{{title}}</h2>
+    <h6 class='col-4' style='text-align: right;'>{{created_at | date}}</h6>
+  </div>
+  <div class="row">
+    <h5 class='col-12' style='white-space : pre;' >{{content}}</h5>
+  </div>
+  <div class='row'>
+    <div class="col-4">
+      <button class='btn btn-danger' (click)='love(-1)'>Don't Love It !</button>
+      {{loveIts}}
+      <button class='btn btn-success' (click)='love(+1)'>Love It !</button>
+    </div>
+    <div class="col-1 offset-7">
+      <button class='btn btn-dark' (click)='onDelete()'> Delete </button>
+    </div>
   </div>
 </li>

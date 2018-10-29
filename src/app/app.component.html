@@ -1,12 +1,20 @@
+<div class="row">
+  <nav class="col-12">
+    <div class="topnav">
+      <div routerLinkActive="active" routerLink="posts" class='navItem active'>
+        <p >Tous les Posts</p>
+      </div>
+      <div routerLinkActive="active" routerLink="new" class='navItem'>
+        <p >Nouveau Post</p>
+      </div>
+    </div>
+  </nav>
+</div>
+
 <div class='container'>
   <div class='row'>
     <ul>
-        <app-blog-post
-          *ngFor='let post of posts'
-          [title]='post.title'
-          [content]='post.content'
-          [loveIts]='post.loveIts'
-          [created_at]='post.created_at'></app-blog-post>
+      <router-outlet></router-outlet>
     </ul>
   </div>
 </div>
